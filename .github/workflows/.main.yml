@@ -24,13 +24,15 @@ jobs:
       #finally build your app with the latest command
       - name: Build and test with Maven
         run: mvn -B test --file simple-api/pom.xml
+
+        
   build-and-push-docker-image:
     needs: test-backend
     runs-on: ubuntu-latest
 
     steps: 
       - name: Checkout code
-        uses: action/checkout@v2
+        uses: action/checkout@v2.3.3
 
       - name: Build image and push backend
         uses : docker/build-push-action@v2
