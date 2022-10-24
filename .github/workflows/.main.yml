@@ -39,7 +39,7 @@ jobs:
         with:
           context: ./simple-api
           # Note: tags has to be all lower-case
-          tags:  ${{secrets.DOCKERHUB_ID}}/tp2/simple-api
+          tags:  ${{secrets.DOCKERHUB_ID}}/TP2/simple-api
 
       - name: Build image and push DB
         uses: docker/build-push-action@v2
