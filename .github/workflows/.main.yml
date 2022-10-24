@@ -52,3 +52,4 @@ jobs:
         with: 
           context: ./httpd
           tags: ${{secrets.DOCKER_HUB_USERNAME}/tp2/httpd
+          
