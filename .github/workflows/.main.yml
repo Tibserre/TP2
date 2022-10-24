@@ -45,6 +45,7 @@ jobs:
           tags:  ${{secrets.DOCKER_HUB_USERNAME}}/tp2:simple-api
           push: ${{ github.ref == 'refs/heads/main' }}
 
+
       - name: Build image and push DB
         uses: docker/build-push-action@v2
         with: 
