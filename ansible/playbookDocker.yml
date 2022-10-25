@@ -4,9 +4,10 @@
   roles: 
     - docker
     - network
+    - proxy
     - database
     - app
-    - proxy
+ 
 
 
 
