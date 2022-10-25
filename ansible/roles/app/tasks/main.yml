@@ -6,3 +6,7 @@
       name: backend
       image: tibserre/tp2:simple-api
       state: started
+      pull: true
+      recreate: true
+      ports: 
+        - 8080:8080
