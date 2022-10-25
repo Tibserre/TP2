@@ -9,4 +9,4 @@
       pull: true
       recreate: true
       ports: 
-        - 8080:8080
+        - "8080:8080"
