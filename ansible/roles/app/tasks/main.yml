@@ -3,5 +3,5 @@
 
   - name: Run api
     docker_container:
-      name: simple-api
+      name: backend
       image: tibserre/tp2:simple-api
