@@ -39,11 +39,21 @@
     service: name=docker state=started
     tags: docker
 
-
+  - name: Create a network
+    docker_network:
+      name: networkWala
 
   - name: Run HTTPD
     docker_container:
       name: httpd
-      image: jdoe/my-httpd:1.0
+      image: tibserre/tp2:httpd
 
-  
+  - name: Run DB
+    docker_container:
+      name: database
+      image: tibserre/tp2:database
+
+  - name: Run api
+    docker_container:
+      name: simple-api
+      image: tibserre/tp2:simple-api
