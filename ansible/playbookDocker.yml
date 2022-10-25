@@ -38,3 +38,12 @@
   - name: Make sure Docker is running
     service: name=docker state=started
     tags: docker
+
+
+
+  - name: Run HTTPD
+    docker_container:
+      name: httpd
+      image: jdoe/my-httpd:1.0
+
+  
