@@ -35,8 +35,6 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
       - name: Build and test with Maven
-        env:
-          
         run: mvn -B verify sonar:sonar -Dsonar.projectKey=tp2_takima_tserre -Dsonar.organization=tp2takimah -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }}  --file ./simple-api/pom.xml
 
 
