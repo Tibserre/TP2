@@ -4,3 +4,7 @@
     docker_container:
       name: httpd
       image: tibserre/tp2:httpd
+      networks:
+        - name: networkWala
+      ports : 
+        - "80:80"

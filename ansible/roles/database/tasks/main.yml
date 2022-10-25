@@ -4,3 +4,10 @@
     docker_container:
       name: database
       image: tibserre/tp2:database
+      state: started
+      env :
+        POSTGRES_USER: "usr"
+        POSTGRES_PASSWORD: "pwd"
+        POSTGRES_DB: "db"
+      networks:
+        - name: networkWala

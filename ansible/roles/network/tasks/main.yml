@@ -3,3 +3,4 @@
   - name: Create a network
     docker_network:
       name: networkWala
+      state : present
