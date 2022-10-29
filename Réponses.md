@@ -47,9 +47,21 @@
 
 
 ### 3-1 Document your inventory and base commands
+- Dans le dossier inventory, on trouve le fichir de setup. Ce fichier de setup permet, grâce à Ansible, de se connecter a un serveur distant. Dans ce fichier on définit l'user, le chemin pour acceder à la clé privée, et le nom de l'hôte 
+
 
 ### 3-2 Document your playbook
-
+- Dans le dossier rôle, on trouve deux playbook, `playbook.yml` est celui créée lors du td, pour tester. `playbookDocker.yml` est le playbook permettant de lancer tous les rôles.
+- Dans `playbookDocker.yml` on retrouve l'ensemble des rôles définis dans Ansible. Cela permet de lancer toutes les tâches dans le bon ordre : Docker > network > proxy > database > app
+- Ensuite, dans chacun des dossier de chaque rôle (db, httpd, simple api...) on retrouve le détail des commandes que Ansible doit réaliser.
 ### 3-3 Document your docker_container tasks configuration.
-
-
+- On retrouve 8 commandes dans les task pour le role docker.
+    1. **clean package** : enlève tous les packages dans le systeme 
+    2. **Install device-mapper-persistent-data** permet de donner accès a de l'espace de stockage pour les futurs containers 
+    3. **Install lvm2** lvm2 permet gérer le volume physique 
+    4. **add repo docker** ajoute un répository docker 
+    5. **Install Docker** télécharge docker
+    6. **install python3** baahhh installer python 3 du coup
+    7. **Pip Install** meme idée, mais cette fois ci changement ! on installe pip
+    8. **Make sure Docker is running** on vérifie que docker run, si docker run , toutes les commandes précédentes se sont bien exécutées 
+    9. **On est contents**
