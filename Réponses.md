@@ -37,7 +37,21 @@
 ### 2-1 What are testcontainers?
  - Ce sont des containers volatil qu'on utilise pour run des tests unitaires. 
 ### 2-2 Document your Github Actions configurations.
-- 
+- Le gitHub Actions est séparé en deux blocs, `test-backend` et `build-and-push-docker-image`
+- Etape 1, `test-backend` 
+    - **Checkout repository** on fait un checkout sur notre code 
+    - **Set up JDK 11** on met en place la JDK 11 pour pouvoir compiler notre code
+    - **Cache SonarCloud packages**
+    - **Cache Maven packages** 
+    - **Build and test with Maven** on build le projet et on lance la vérification par sonarcloud 
+- Etape 2, `build-and-push-docker-image` 
+    - Cette étape necessite que l'étape 1 soit terminée 
+    - **Checkout code** on fait un checkout sur notre code 
+    - **Login to DockerHub** on se connecte à DockerHub avec notre identifiant et notre token
+    - **Build image and push backend** on build le backend et on le push sur dockerhub
+    - **Build image and push DB** on build la bdd et on le push sur dockerhub
+    - **Build image and push httpd** on build le proxy et on le push sur dockerhub
+
 
 ### 2-3 Document your quality gate configuration.
 ![hefizobgaeiho](./Imgs/2022-10-25%2015_12_36-simple-api%20-%20tp2takimah%20et%207%20pages%20de%20plus%20-%20Personnel%20%E2%80%93%20Microsoft%E2%80%8B%20Edge.png)
