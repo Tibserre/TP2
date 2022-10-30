@@ -41,8 +41,8 @@
 - Etape 1, `test-backend` 
     - **Checkout repository** on fait un checkout sur notre code 
     - **Set up JDK 11** on met en place la JDK 11 pour pouvoir compiler notre code
-    - **Cache SonarCloud packages**
-    - **Cache Maven packages** 
+    - **Cache SonarCloud packages** mise en cache des package sonar cloud (but : meilleurs perfs)
+    - **Cache Maven packages** mise en cache des packages maven (but, meilleurs perfs)
     - **Build and test with Maven** on build le projet et on lance la vérification par sonarcloud 
 - Etape 2, `build-and-push-docker-image` 
     - Cette étape necessite que l'étape 1 soit terminée 
